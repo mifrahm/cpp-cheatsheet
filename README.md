@@ -108,6 +108,11 @@ if (x) a;                   // If x is true (not 0), evaluate a
 else if (y) b;              // If not x and y (optional, may be repeated)
 else c;                     // If not x and not y (optional)
 
+// If time is less than 18 then print "Good day", if not print "Good evening"
+int time = 20;
+string result = (time < 18) ? "Good day." : "Good evening.";
+cout << result;
+
 while (x) a;                // Repeat 0 or more times while x is true
 
 for (x; y; z) a;            // Equivalent to: x; while(y) {a; z;}
@@ -429,6 +434,24 @@ for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
 vector<int> b(a.begin(), a.end());  // b is copy of a
 vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
+
+// range based loop for C++ 11
+for (const auto& inner : vector) {
+    cout << inner<< " ";
+}
+
+// range based loop for double vector
+for (const auto& inner : vector) {
+    for (const auto& item : inner) {
+        cout << item << " ";
+    }
+}
+
+// Reverse Loop - Using a for loop with index, C++ 14
+for(std::size_t i = 0; i < v.size(); ++i) {
+    std::cout << v[v.size() - 1 - i] << "\n";
+}
+
 ```
 
 ## `deque` (Array stack queue)
