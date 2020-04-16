@@ -470,6 +470,13 @@ a["hello"] = 3;           // Add or replace element a["hello"]
 for (auto& p:a)
     cout << p.first << p.second;  // Prints hello, 3
 a.size();                 // 1
+
+// finding an item in an unordered map
+unordered_map<string,int>::const_iterator got = a.find ("hello");
+if ( got == a.end() )
+    cout << "not found";
+else
+    cout << got->first << " is " << got->second;
 ```
 
 ## `set` (store unique elements - usually implemented as binary search trees - avg. time complexity: O(log n))
