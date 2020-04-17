@@ -514,7 +514,8 @@ else
     cout << got->first << " is " << got->second;
 ```
 
-## `multimap'
+## `multimap`
+```cpp
 multimap<string, string> marriages;
 
 marriages.insert(pair<string, string>("Tom", "Suzy"));
@@ -540,7 +541,7 @@ cout << endl << "Women Married to Men Named Tom" << endl;
         ++Values;
     }
 Source: https://www.dummies.com/programming/cpp/using-duplicate-keys-with-a-multimap/
-
+```
 
 ## `set` (store unique elements - usually implemented as binary search trees - avg. time complexity: O(log n))
 
