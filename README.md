@@ -482,6 +482,18 @@ a["hello"] = 3;           // Add or replace element a["hello"]
 for (auto& p:a)
     cout << p.first << p.second;  // Prints hello, 3
 a.size();                 // 1
+
+// example of string and vector map
+map<string, vector<int>> fruits;
+
+// if found then add, if not then add a new one (only if you need to keep track)
+fruits[fruit].push_back(11);
+
+// If you don't are okay with this discarded if it key already exists. this is for map<int, int>
+fruits.insert(make_pair(0, 42));
+
+source: 
+https://stackoverflow.com/questions/4286670/what-is-the-preferred-idiomatic-way-to-insert-into-a-map
 ```
 
 ## `unordered_map` (associative array - usually implemented as hash table - avg. time complexity: O(1))
@@ -501,6 +513,34 @@ if ( got == a.end() )
 else
     cout << got->first << " is " << got->second;
 ```
+
+## `multimap'
+multimap<string, string> marriages;
+
+marriages.insert(pair<string, string>("Tom", "Suzy"));
+marriages.insert(pair<string, string>("Harry", "Harriet"));
+marriages.insert(pair<string, string>("Tom", "Amy"));
+
+// search through
+for (multimap<string, string>::iterator Values = marriages.begin();
+        Values != marriages.end(); ++Values)
+        {
+            cout << (*Values).first << " is married to " <<
+                (*Values).second << endl;
+        }
+        
+// printing duplicates
+cout << endl << "Women Married to Men Named Tom" << endl;
+    multimap<string, string>::const_iterator Values = marriages.find("Tom");
+    
+    int Number = marriages.count("Tom");
+    for (int i = 0; i < Number; i++)
+    {
+        cout << Values->second << endl;
+        ++Values;
+    }
+Source: https://www.dummies.com/programming/cpp/using-duplicate-keys-with-a-multimap/
+
 
 ## `set` (store unique elements - usually implemented as binary search trees - avg. time complexity: O(log n))
 
